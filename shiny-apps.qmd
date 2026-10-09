@@ -1,0 +1,34 @@
+---
+title: "Shiny Apps"
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+### The copulatheque
+
+The [copulatheque](https://copulatheque.shinyapps.io/copulas/) is a shiny app that illustrates the potential to model dependence of any data set. The app uses the copula families implemented in the R packages [copula](https://cran.r-project.org/package=copula) and [VineCopula](https://cran.r-project.org/package=VineCopula).
+
+[Open the copulatheque](https://copulatheque.shinyapps.io/copulas/){.btn .btn-primary}
+[Source on GitHub](https://github.com/BenGraeler/copulatheque){.btn .btn-outline-secondary}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Spatio-temporal variogram families
+
+A single empirical spatio-temporal variogram can be modelled through different variogram families. This shiny app allows to interactively explore the fits of different variogram families to an empirical variogram. The app is based on real data using the `DE_RB_2005` data set from the [gstat](https://cran.r-project.org/package=gstat) package.
+
+[Explore spatio-temporal variogram families](https://copulatheque.shinyapps.io/stvariogrammodel/){.btn .btn-primary}
+[Source on GitHub](https://github.com/BenGraeler/copulatheque/tree/master/spatial){.btn .btn-outline-secondary}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Spatio-temporal variogram parameter exploration
+
+Different spatio-temporal covariance models react differently to their variogram parameters. This shiny app allows to interactively explore these models  in [gstat](https://cran.r-project.org/package=gstat).
+
+[Explore spatio-temporal variogram parameters](https://copulatheque.shinyapps.io/stvariogramexplorer/){.btn .btn-primary}
+[Source on GitHub](https://github.com/BenGraeler/copulatheque/tree/master/spacetime){.btn .btn-outline-secondary}
+:::
+
+:::

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" default-locale="en-GB">
+  <info>
+    <title>Reverse chronological publication list</title>
+    <id>https://ben.graeler.org/bib/reverse-chronological.csl</id>
+    <author><name>Benedikt Gräler</name></author>
+    <updated>2026-10-09T00:00:00+00:00</updated>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter-precedes-last="never" initialize-with=". " name-as-sort-order="all" sort-separator=", "/>
+      <substitute><names variable="editor"/></substitute>
+    </names>
+  </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <name and="text" initialize-with=". " delimiter=", "/>
+      <label form="short" prefix=" (" suffix=")"/>
+    </names>
+  </macro>
+  <macro name="year">
+    <date variable="issued"><date-part name="year"/></date>
+  </macro>
+  <macro name="container">
+    <choose>
+      <if type="article-journal">
+        <group delimiter=", ">
+          <text variable="container-title" font-style="italic"/>
+          <group>
+            <text variable="volume"/>
+            <text variable="issue" prefix="(" suffix=")"/>
+          </group>
+          <text variable="page"/>
+        </group>
+      </if>
+      <else-if type="chapter paper-conference" match="any">
+        <group delimiter=", ">
+          <group delimiter=" ">
+            <text term="in" text-case="capitalize-first" suffix=":"/>
+            <text macro="editor"/>
+          </group>
+          <text variable="container-title" font-style="italic"/>
+          <text variable="collection-title"/>
+          <group delimiter=" ">
+            <label variable="page" form="short"/>
+            <text variable="page"/>
+          </group>
+        </group>
+      </else-if>
+      <else-if type="report thesis" match="any">
+        <group delimiter=" ">
+          <text variable="genre"/>
+          <text variable="number"/>
+        </group>
+      </else-if>
+    </choose>
+  </macro>
+  <macro name="link">
+    <choose>
+      <if variable="DOI">
+        <text variable="DOI" prefix="https://doi.org/"/>
+      </if>
+      <else-if variable="URL">
+        <text variable="URL"/>
+      </else-if>
+    </choose>
+  </macro>
+  <citation>
+    <layout><text macro="author"/></layout>
+  </citation>
+  <bibliography entry-spacing="0" hanging-indent="false">
+    <sort>
+      <key macro="year" sort="descending"/>
+      <key macro="author"/>
+    </sort>
+    <layout>
+      <group delimiter=". " suffix=".">
+        <group delimiter=" ">
+          <text macro="author"/>
+          <text macro="year" prefix="(" suffix=")"/>
+        </group>
+        <text variable="title" font-weight="bold"/>
+        <text macro="container"/>
+        <group delimiter=", ">
+          <text variable="publisher"/>
+          <text variable="publisher-place"/>
+        </group>
+        <text variable="note"/>
+        <text macro="link"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>

@@ -1,0 +1,69 @@
+---
+title: "Teaching"
+toc: true
+toc-title: "Sections"
+---
+
+## Recent courses and workshops
+
+WS 2024/2025
+: Spatio-Temporal Data Analysis, Institute for Geoinformatics, University of Münster.
+
+SS 2021
+: Copernicus Marine Services for Energy Optimized Cargo Ship Routing, Institute for Geoinformatics, University of Münster.
+
+SS 2020
+: Studienprojekt: Floating Car Data Analysis, Institute for Geoinformatics, University of Münster.
+
+July 2019
+: Workshop: *How to model skewed and heavy tailed distributions: An introduction to copulas*, Spatial Statistics Conference 2019, Sitges, Spain, 10–13 July 2019.
+
+February 2019
+: Two two-day workshops: *R als GIS*, Thünen Institute, Braunschweig.
+
+September 2017
+: EDC Forum 2017, ifgi, Münster, Germany.
+
+July 2017
+: Workshop: *Interpolation of spatial and spatio-temporal data*, Spatial Statistics Conference 2017, Lancaster, UK, 4–7 July 2017.
+
+November 2016
+: Lecture block with exercises: *Stochastische Hydrologie*, Ruhr-University Bochum.
+
+## Courses taught at the Institute for Geoinformatics, 2010–2016
+
+WS 2015/2016
+: Analysis of Spatio-Temporal Data, Institute for Geoinformatics, University of Münster.
+
+SS 2015
+: Matheergänzungskurs zur Linearen Algebra für Informatiker, Institute for Geoinformatics, University of Münster.
+: Guest lecture on copulas and spatial copulas within *Advanced Geostatistics*, ITC -- Faculty of Geo-Information Science and Earth Observation, University of Twente, The Netherlands, 6 July 2015.
+
+WS 2014/2015
+: Matheergänzungskurs zur Analysis für Informatiker, Institute for Geoinformatics, University of Münster.
+: Studienprojekt: FOSSGIS App, Institute for Geoinformatics, University of Münster.
+
+WS 2013/2014
+: Lecture on spatio-temporal kriging within *Analysis of Spatio-Temporal Data*, Institute for Geoinformatics, University of Münster. The interactive exploration tool for spatio-temporal variogram surfaces is part of the [shiny apps](shiny-apps.qmd).
+
+August 2013
+: Copula Summer School: practical introduction to R with exercises, 19 August 2013.
+
+SS 2012
+: Matheergänzung zu *Lineare Algebra für Informatiker*, Institute for Geoinformatics, University of Münster.
+: Exercises for *Einführung in die Geostatistik*, Institute for Geoinformatics, University of Münster.
+
+WS 2011/2012
+: Matheergänzung, Institute for Geoinformatics, University of Münster.
+: Geochange in the Brazilian Amazon, Institute for Geoinformatics, University of Münster.
+
+SS 2011
+: Introduction to Geostatistics, Institute for Geoinformatics, University of Münster.
+
+WS 2010/2011
+: Matheergänzung für *Mathematik für Physiker und Informatiker*, Institute for Geoinformatics, University of Münster.
+: Block seminar: Spatio-Temporal Dependence, Institute for Geoinformatics, University of Münster. See [spatial copulas](copulas.qmd).
+
+SS 2010
+: Matheergänzung für *Lineare Algebra für Informatiker*, Institute for Geoinformatics, University of Münster.
+: Introduction to Geostatistics, Institute for Geoinformatics, University of Münster.

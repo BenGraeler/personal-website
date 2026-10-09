@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Introduction to R - exercises</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Introduction to R - exercises</h1>
+
+<p>Please follow the following exercises to get familiar with R. Parts of the exercises follow A (very) short introduction to R</it> by Paul Torfs &amp; Claudia Brauer, Hydrology and Quantitative Water Management Group Wageningen University, The Netherlands</p>
+
+<h2>Task 1</h2>
+
+<p>Compute the difference between 2012 and the year you started at your university and divide this by the difference between 2012 and the year you were born. Multiply this with 100 to get the percentage of your life you have spent at this university. Use brackets if you need them.</p>
+
+<h2>Task 2</h2>
+
+<p>Find help for the log function.</p>
+
+<h2>Task 3</h2>
+
+<p>Repeat Task 1, but with several steps in between. You can give the variables any name you want, but the name has to start with a letter. Additionally, calculate the following:</p>
+
+<h4>a)</h4>
+
+<p>\[ \frac{5}{5+345} \]</p>
+
+<h4>b)</h4>
+
+<p>\[ 2 \cdot \sin (90°) \] 
+Mind the conversion between degrees and radians!</p>
+
+<h4>c)</h4>
+
+<p>\[ \sqrt{16}+\sqrt{25} \]</p>
+
+<h4>d)</h4>
+
+<p>\[ \frac{\frac{5}{5+345}+2 \cdot \sin (90°)}{\sqrt{16}+\sqrt{25}} \]</p>
+
+<h2>Task 4</h2>
+
+<p>Compute the sum of 4, 5, 8 and 11 by first combining them into a vector and then using the function sum. What are mean and median of this series?</p>
+
+<h2>Task 5</h2>
+
+<p>Plot 100 random numbers following a Gaussian distribution with mean 11 and standard deviation 42 as a series of connected points and add their the mean as a horizontal grey line. Additionally, plot these random numbers in a histogram (showing densities on the y-axis) and as box plot.</p>
+
+<h2>Task 6</h2>
+
+<p>Put the numbers 31 to 60 in a vector named <code>p</code> and in a matrix with 6 rows and 5 columns named <code>q</code>. Calculate the row- and column-wise sum of <code>q</code>.</p>
+
+<h2>Task 7</h2>
+
+<p>Construct three random standard normal vectors of length 100. Call these vectors x1, x2 and x3. Make a data frame called t with three columns (called Va, Vb and Vc) containing respectively x1, x1+x2 and x1+x2+x3. Call the following functions for this data frame: plot(t) and cov(t). For each column call the function <code>sd</code>. Can you understand the results?</p>
+
+<h2>Task 8</h2>
+
+<p>Compute the mean of the square root of a vector of 100 random numbers. What happens?</p>
+
+<h2>Task 9</h2>
+
+<p>Make a vector from 1 to 100. Make a for-loop which runs through the whole vector. Multiply the elements which are smaller than 5 and larger than 90 with 10 and the other elements with 0.1.</p>
+
+<h2>Task 10</h2>
+
+<p>Write a function for the previous Task, so that you can feed it any vector you like (as argument). Use the standard R function length in the specification of the counter.</p>
+
+<h2>Task 11</h2>
+
+<p>Find a suitable marginal distribution for the <code>Nile</code> dataset:</p>
+
+<h2>Task 12</h2>
+
+<p>Install all required packages for the course and take a look at their demos and data.</p>
+
+<pre><code>install.packages(&quot;copula&quot;)
+install.packages(&quot;evd&quot;)
+
+demo(package=&quot;copula&quot;)
+demo(package=&quot;evd&quot;)
+
+data(package=&quot;copula&quot;)
+data(package=&quot;evd&quot;)
+
+</code></pre>
+
+<h5>Load your data</h5>
+
+<p>Locate your favourite data set you might want to use throughout the course and load it into R. Make sure to save it as a clean .RData file. Mind your current working directory. Set up a new RStudio project for the upcoming week.</p>
+
+<h5>Optional extensions:</h5>
+
+<p>Install optional packages:</p>
+
+<pre><code>install.packages(&quot;sp&quot;)
+install.packages(&quot;spacetime&quot;)
+install.packages(&quot;VineCopula&quot;)
+install.packages(&quot;rgl&quot;)
+install.packages(&quot;spcopula&quot;, repos=&quot;http://R-Forge.R-project.org&quot;)
+</code></pre>
+
+<p>check the demo doing a subset of a multivariate return period analysis in the spcopula package:</p>
+
+<pre><code>library(spcopula)
+demo(&quot;MRP&quot;)
+</code></pre>
+
+</body>
+
+</html>
+

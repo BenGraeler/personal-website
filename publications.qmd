@@ -1,0 +1,37 @@
+---
+title: "Publications"
+subtitle: "[Papers](#refs-articles), [reports](#refs-reports), [talks](#refs-talks) and [software](#refs-software) - newest first."
+grouped-bibliographies:
+  articles: bib/articles.bib
+  reports: bib/reports.bib
+  software: bib/software.bib
+  talks: bib/talks.bib
+csl: bib/reverse-chronological.csl
+filters:
+  - bib/grouped-bib.lua
+  - bib/highlight-author.lua
+toc: true
+toc-title: "Sections"
+---
+
+See also [Google Scholar](https://scholar.google.com/citations?user=_r1yhNQAAAAJ) and [ORCID](https://orcid.org/0000-0001-5443-4304).
+
+## Journal articles, book chapters and conference papers
+
+::: {#refs-articles}
+:::
+
+## Reports, theses and project deliverables
+
+::: {#refs-reports}
+:::
+
+## Talks, posters and workshops
+
+::: {#refs-talks}
+:::
+
+## Software
+
+::: {#refs-software}
+:::

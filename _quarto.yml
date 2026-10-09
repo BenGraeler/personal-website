@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - files/**
+    - CNAME
+
+website:
+  title: "Benedikt Gräler"
+  description: "Spatio-temporal statistics, copulas and open geospatial data science."
+  site-url: https://ben.graeler.org
+  favicon: images/portrait.jpg
+  navbar:
+    left:
+      - href: index.qmd
+        text: About
+      - href: publications.qmd
+        text: Publications
+      - href: teaching.qmd
+        text: Teaching
+      - href: copulas.qmd
+        text: Copulas
+      - href: shiny-apps.qmd
+        text: Shiny Apps
+    right:
+      - icon: github
+        href: https://github.com/BenGraeler
+        aria-label: GitHub
+      - icon: envelope
+        href: mailto:b.graeler@52north.org
+        aria-label: E-mail
+  page-footer:
+    left: "© Benedikt Gräler"
+    center: "Genuine content by Benedikt Gräler, technical laborious work done by AI, updated in October 2026."
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+      dark: [darkly, styles-dark.scss]
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
