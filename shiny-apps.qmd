@@ -9,7 +9,7 @@ title: "Shiny Apps"
 
 The [copulatheque](https://copulatheque.shinyapps.io/copulas/) is a shiny app that illustrates the potential to model dependence of any data set. The app uses the copula families implemented in the R packages [copula](https://cran.r-project.org/package=copula) and [VineCopula](https://cran.r-project.org/package=VineCopula).
 
-[Open the copulatheque](https://copulatheque.shinyapps.io/copulas/){.btn .btn-primary}
+[Explore dependence with copulas](https://copulatheque.shinyapps.io/copulas/){.btn .btn-primary}
 [Source on GitHub](https://github.com/BenGraeler/copulatheque){.btn .btn-outline-secondary}
 :::
 

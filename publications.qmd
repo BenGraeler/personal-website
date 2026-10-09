@@ -14,7 +14,7 @@ toc: true
 toc-title: "Sections"
 ---
 
-See also [Google Scholar](https://scholar.google.com/citations?user=_r1yhNQAAAAJ) and [ORCID](https://orcid.org/0000-0001-5443-4304).
+See also [Google Scholar](https://scholar.google.com/citations?user=_r1yhNQAAAAJ), [OpenAlex](https://openalex.org/A5066952511) and [ORCID](https://orcid.org/0000-0001-5443-4304).
 
 ## Journal articles, book chapters and conference papers
 

@@ -18,6 +18,9 @@ about:
     - icon: mortarboard
       text: Google Scholar
       href: https://scholar.google.com/citations?user=_r1yhNQAAAAJ
+    - icon: graph-up
+      text: OpenAlex
+      href: https://openalex.org/A5066952511
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/benediktgraeler/
@@ -28,13 +31,15 @@ about:
 
 Benedikt Gräler completed his Diploma in Mathematics in 2009 and earned his PhD in Geoinformatics in 2014. He conducted his research at the [Institute for Geoinformatics](https://www.uni-muenster.de/Geoinformatics/) in the field of spatial statistics; his developments and findings are collected in his dissertation [*Developing Spatio-Temporal Copulas*](files/publications/Diss_Benedikt_Graeler.pdf).
 
-In January 2016, he joined the [Institute of Hydrology, Water Resources Management and Environmental Engineering](http://www.hydrology.ruhr-uni-bochum.de/index.html.en) at Ruhr-University Bochum as a research associate and contributed to the SFB 823 "[Statistical modelling of nonlinear dynamic processes](https://www.statistik.tu-dortmund.de/sfb823.html)". Since May 2017, he has worked at [52°North Spatial Information Research GmbH](https://52north.org) as a research associate and consultant leading the Spatio-Temporal Data Science Lab. In May 2021, Benedikt became one of the managing directors of 52°North. He is responsible for the research pursued at 52°North and keeps close contact with universities and associated research partners. Together with [con terra](https://www.conterra.de) and the [University of Münster](https://www.uni-muenster.de), he initiated the [Spatial AI Nexus Münster](https://www.spatial-ai-nexus.ms), a transfer network that brings applied spatial AI research into practice for public authorities, companies and international organisations.
+In January 2016, he joined the [Institute of Hydrology, Water Resources Management and Environmental Engineering](http://www.hydrology.ruhr-uni-bochum.de/index.html.en) at Ruhr-University Bochum as a research associate and contributed to the SFB 823 "[Statistical modelling of nonlinear dynamic processes](https://www.statistik.tu-dortmund.de/sfb823.html)". Since May 2017, he has worked at [52°North Spatial Information Research GmbH](https://52north.org) as a research associate and consultant leading the Spatio-Temporal Data Science Lab. In May 2021, Benedikt became one of the managing directors of 52°North. He is responsible for the research pursued at 52°North and keeps close contact with universities and associated research partners. Together with [con terra](https://www.conterra.de) and the [University of Münster](https://www.uni-muenster.de), he initiated the [Spatial AI Nexus Münster](https://www.spatial-ai-nexus.ms) with 52°North as founding member, a transfer network that brings applied spatial AI research into practice for public authorities, companies and international organisations.
 
 Beyond 52°North, Benedikt serves as Vice-President of [EUROGI](https://eurogi.org), the European umbrella organisation for geographic information, and as Europe delegate of the [Deutscher Dachverband für Geoinformation (DDGI)](https://ddgi.de).
 
 ## Research
 
-At 52°North, Benedikt researches Information Systems for spatial and spatio-temporal data integrating statistical methods. Benedikt's focus in mathematical research has been on copulas and he extended the concept to the spatial and spatio-temporal domain. This includes modelling spatio-temporal random fields, trajectory data of various kinds, as well as identifying and modelling extreme events in space and time. Please take a look at his [publications](publications.qmd) for a detailed list of recent professional activities. With the help of [shiny](https://shiny.posit.co/), he made different copula families interactively accessible in his [copulatheque](https://copulatheque.shinyapps.io/copulas/).
+At 52°North, Benedikt researches Information Systems for spatial and spatio-temporal data integrating statistical methods, machine learning and GeoAI applications. This is accompanied by research on agent interactions with information systems.
+
+Benedikt's focus in mathematical research has been on copulas and he extended the concept to the spatial and spatio-temporal domain. This includes modelling spatio-temporal random fields, trajectory data of various kinds, as well as identifying and modelling extreme events in space and time. Please take a look at his [publications](publications.qmd) for a detailed list of recent professional activities. With the help of [shiny](https://shiny.posit.co/), he made different copula families interactively accessible in his [copulatheque](https://copulatheque.shinyapps.io/copulas/).
 
 ## Software
 

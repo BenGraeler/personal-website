@@ -64,3 +64,42 @@ for (nm in names(fams)) {
   scatter(s[, 1], s[, 2], nm, xlab = "U", ylab = "V", unit = TRUE)
 }
 dev.off()
+
+# Figure 3: multivariate return periods ------------------------------------
+# Uses the flood peak/volume sample of the MRP demo in sfcopula
+# (remotes::install_github("BenGraeler/sfcopula")).
+library(sfcopula)
+data("simulatedTriples")
+pv <- as.matrix(rankTransform(triples[, 1], triples[, 3]))
+
+cop <- claytonCopula(coef(fitCopula(claytonCopula(), pv, method = "ml")))
+th <- cop@parameters
+kendall <- function(t) t + t * (1 - t^th) / th
+t_or <- 1 - 1 / 10
+t_ken <- uniroot(function(t) kendall(t) - t_or, c(0.01, 0.9999))$root
+
+g <- seq(0.5, 1, length.out = 301)
+grid <- as.matrix(expand.grid(g, g))
+cdf <- matrix(pCopula(grid, cop), length(g))
+surv <- 1 - grid[, 1] - grid[, 2] + cdf  # P(U > u, V > v)
+surv <- matrix(surv, length(g))
+
+line_cols <- c(or = "#e07a1f", ken = "#8e5cc8", and = "#2a9d4a")
+
+svg(file.path(out_dir, "return-periods.svg"), width = 5.6, height = 5.2)
+panel_par(1)
+par(mar = c(4, 4, 1, 1))
+in_view <- pv[, 1] >= 0.5 & pv[, 2] >= 0.5
+plot(pv[in_view, 1], pv[in_view, 2], pch = 16, cex = 0.6, col = pt_col,
+     xlim = c(0.5, 1), ylim = c(0.5, 1), asp = 1,
+     xlab = "Peak discharge (U)", ylab = "Flood volume (V)")
+contour(g, g, cdf, levels = t_or, add = TRUE, drawlabels = FALSE,
+        col = line_cols["or"], lwd = 2.5)
+contour(g, g, cdf, levels = t_ken, add = TRUE, drawlabels = FALSE,
+        col = line_cols["ken"], lwd = 2.5)
+contour(g, g, surv, levels = 1 - t_or, add = TRUE, drawlabels = FALSE,
+        col = line_cols["and"], lwd = 2.5)
+legend("topleft", c("OR", "Kendall", "AND"), col = line_cols, lwd = 2.5,
+       bty = "n", text.col = fg_col, title = "10-year critical lines",
+       title.col = fg_col)
+dev.off()

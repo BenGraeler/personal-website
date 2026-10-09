@@ -7,7 +7,7 @@ toc-title: "Sections"
 
 ## Why copulas?
 
-Many questions in the environmental sciences involve several variables at once: rainfall and river discharge, temperature at neighbouring stations, deforestation this year and last year. How these variables behave *together* matters as much as how each behaves on its own. A flood risk assessment, for example, depends on how likely high discharge and high water levels are to occur at the same time.
+Many questions across disciplines involve several variables at once: stock indices from two or more companies, rainfall and river discharge, temperature at neighbouring stations, deforestation this year and last year. How these variables behave *together* matters as much as how each behaves on its own. A flood risk assessment, for example, depends on how likely high discharge and high water levels are to occur at the same time.
 
 Copulas are a tool for exactly this. They separate a multivariate distribution into two parts that can be studied and modelled independently:
 
@@ -49,7 +49,7 @@ The most familiar measure of dependence is Pearson's correlation coefficient. It
 - **Spearman's rho** is Pearson's correlation computed on the ranks of the data.
 - **Kendall's tau** compares all pairs of observations and counts how many are *concordant* (both variables increase together) versus *discordant*.
 
-The figure below shows one and the same dependence structure combined with two different sets of margins. Pearson's correlation changes with the margins, while Kendall's tau stays the same. After a rank transformation $u = \operatorname{rank}(x) / (n + 1)$, both samples become identical: what remains is the copula.
+The figure below shows one and the same dependence structure combined with two different sets of margins. Pearson's correlation changes with the margins, while Kendall's tau stays the same. After a rank transformation $u = \operatorname{rank}(x) / (n + 1)$, both samples become identical: what remains is the **copula**.
 
 ![The same dependence with normal and log-normal margins. Only rank-based measures and the rank-transformed sample are unaffected by the margins.](images/copulas/margins-vs-copula.svg){fig-alt="Three scatterplots. Left: a sample with normal margins, Pearson correlation 0.67 and Kendall's tau 0.46. Middle: the same sample with log-normal margins, Pearson correlation 0.52 and Kendall's tau 0.46. Right: both samples after rank transformation to the unit square, which look identical."}
 
@@ -100,6 +100,48 @@ summary(fit)
 ```
 
 The [copulatheque](https://copulatheque.shinyapps.io/copulas/) lets you explore different copula families interactively in the browser.
+
+## Multivariate return periods
+
+In hydrology, design values are usually expressed as return periods: a 100-year flood is one that is exceeded on average once in 100 years. For a single variable with cdf $F$ and an average time $\mu$ between events (one year for annual maxima), the return period of a value $x$ is
+
+$$
+T(x) = \frac{\mu}{1 - F(x)}.
+$$
+
+A flood, however, is characterised by more than one variable. Dams and retention basins have to cope with both the peak discharge and the flood volume, and the two are strongly dependent. For two or more variables there is no single definition of "exceeding" a design event, and different definitions lead to quite different design values. With $u = F(x)$, $v = G(y)$ and the copula $C$, three common definitions are:
+
+- **OR**: an event is critical if *either* variable exceeds its design value, $T_{\text{OR}} = \mu \,/\, \big(1 - C(u, v)\big)$.
+- **AND**: an event is critical only if *both* variables exceed their design values, $T_{\text{AND}} = \mu \,/\, \big(1 - u - v + C(u, v)\big)$.
+- **Kendall**: an event is critical if it is more extreme in terms of the copula, i.e. if $C(U, V) > t$. With the Kendall distribution function $K_C(t) = P\big(C(U, V) \le t\big)$, this gives $T_{\text{KEN}} = \mu \,/\, \big(1 - K_C(t)\big)$.
+
+The figure shows the difference for the flood peaks and volumes of 494 simulated flood events, the data set of the multivariate return period demo in [sfcopula](https://github.com/BenGraeler/sfcopula). Peak and volume are strongly dependent (Kendall's tau 0.85), and a Clayton copula describes their dependence well. Each line marks all combinations of peak and volume that have a return period of exactly 10 years under one of the definitions:
+
+![Critical lines of the 10-year return period under the OR, AND and Kendall definitions for flood peak discharge and volume, shown on the copula scale. Points are simulated flood events.](images/copulas/return-periods.svg){fig-alt="Scatterplot of rank-transformed flood peak discharge against flood volume, both between 0.5 and 1, with three curved lines. The green AND line lies furthest from the upper-right corner, the purple Kendall line in the middle, and the orange OR line closest to the corner." width=60%}
+
+All three lines claim to describe a 10-year event, but they are far apart. Assuming one flood per year, a 10-year event should be exceeded by about one in ten floods. In the sample, 10.9 % of the events lie beyond the Kendall line, close to the intended 10 %. Only 4.7 % lie beyond the OR line, so in terms of Kendall's definition the OR line actually corresponds to a return period of about 23 years. Beyond the AND line lie 15.2 % of the events, so it describes a more frequent event than intended.
+
+Which definition is appropriate depends on what makes an event dangerous for the structure at hand. The review by Gräler et al. (2013, see [publications](publications.qmd)) compares these and further definitions and their consequences for synthetic design hydrographs. The sfcopula package provides the Kendall distribution function and the related return periods:
+
+```r
+library(sfcopula)
+
+# flood peak and volume of 494 simulated flood events
+data("simulatedTriples")
+peakVol <- rank_transform(triples[, 1], triples[, 3])
+
+# fit a Clayton copula by maximum likelihood
+copQV <- fitCopula(claytonCopula(), as.matrix(peakVol), method = "ml")@copula
+
+# Kendall distribution function K(t) = P(C(U, V) <= t)
+kendallFunQV <- get_kendall_distr(copQV)
+
+# critical level of the 10-year Kendall return period (one event per year)
+critical_level(kendallFunQV, 10, mu = 1)                     # 0.833
+
+# Kendall return period of the 10-year OR critical level
+kendall_rp(kendallFunQV, cl = 0.9, mu = 1, copula = copQV)   # 23.3 years
+```
 
 ## Spatial copulas
 
