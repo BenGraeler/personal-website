@@ -9,7 +9,7 @@ website:
   title: "Benedikt Gräler"
   description: "Spatio-temporal statistics, copulas and open geospatial data science."
   site-url: https://ben.graeler.org
-  favicon: images/portrait.jpg
+  favicon: images/Ben_Graeler_450x450.jpg
   navbar:
     left:
       - href: index.qmd

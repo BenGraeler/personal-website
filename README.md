@@ -15,7 +15,7 @@ Personal website of Benedikt Gräler, built with [Quarto](https://quarto.org) an
 | `bib/reverse-chronological.csl` | Citation style (newest first) |
 | `bib/grouped-bib.lua`, `bib/highlight-author.lua` | Filters: one list per BibTeX file; own name in bold |
 | `files/` | Older slides, posters, course material and dissertation |
-| `images/portrait.jpg` | Portrait |
+| `images/Ben_Graeler_450x450.jpg` | Portrait (also used as favicon) |
 
 ## Local preview
 
