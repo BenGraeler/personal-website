@@ -1,11 +1,11 @@
 ---
 title: "Dr. Benedikt Gräler"
 subtitle: "Managing Director <br> Head of Research <br> [52&deg;North Spatial Information Research GmbH](https://52north.org)"
-image: images/portrait.jpg
+image: images/Ben_Graeler_450x450.jpg
 about:
   template: trestles # jolla trestles solana marquee broadside
   image-shape: rounded
-  image-width: 14em
+  image-width: 16em
   links:
     - icon: envelope
       text: E-mail
